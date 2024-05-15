@@ -1,3 +1,23 @@
+<?php
+require_once __DIR__ . '/Models/Product.php';
+require_once __DIR__ . '/Models/DogProduct.php';
+require_once __DIR__ . '/Models/CatProduct.php';
+require_once __DIR__ . '/Models/Food.php';
+require_once __DIR__ . '/Models/Toy.php';
+require_once __DIR__ . '/Models/Bed.php';
+require_once __DIR__ . '/Models/Card.php';
+
+$dogFood = new DogProduct('dog_food.jpg', 'Cibo per Cani', 19.99, 'Cibo');
+$catToy = new CatProduct('cat_toy.jpg', 'Gioco per Gatti', 9.99, 'Gioco');
+$dogBed = new DogProduct('dog_bed.jpg', 'Cuccia per Cani', 49.99, 'Cuccia');
+
+$products = [
+    $dogFood,
+    $catToy,
+    $dogBed
+];
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,31 +50,9 @@
 <body>
     <h1>Benvenuti nel nostro Pet Shop</h1>
     <?php
-        class Product {
-            protected $image;
-            protected $title;
-            protected $price;
-            protected $categoryIcon;
-            protected $type;
-
-            public function __construct($image, $title, $price, $categoryIcon, $type) {
-                $this->image = $image;
-                $this->title = $title;
-                $this->price = $price;
-                $this->categoryIcon = $categoryIcon;
-                $this->type = $type;
-            }
-
-            public function getDetails() {
-                return [
-                    'image' => $this->image,
-                    'title' => $this->title,
-                    'price' => $this->price,
-                    'categoryIcon' => $this->categoryIcon,
-                    'type' => $this->type
-                ];
-            }
-        }
+    foreach ($products as $product) {
+        Card::printCard($product);
+    }
     ?>
 </body>
 </html>
