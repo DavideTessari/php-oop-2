@@ -6,9 +6,13 @@ class Card {
         echo "<img src='{$details['image']}' alt='{$details['title']}' />";
         echo "<h2>{$details['title']}</h2>";
         echo "<p>Prezzo: {$details['price']}€</p>";
+        if ($details['priceAfterDiscount'] < $details['price']) {
+            echo "<p>Prezzo Scontato: {$details['priceAfterDiscount']}€</p>";
+        }
         echo "<p>Categoria: {$details['categoryIcon']}</p>";
         echo "<p>Tipo: {$details['type']}</p>";
         echo "</div>";
     }
 }
 ?>
+

@@ -1,5 +1,9 @@
 <?php
+require_once __DIR__ . '/Models/Discountable.php';
+
 class Product {
+    use Discountable;
+
     protected $image;
     protected $title;
     protected $price;
@@ -20,8 +24,10 @@ class Product {
             'title' => $this->title,
             'price' => $this->price,
             'categoryIcon' => $this->categoryIcon,
-            'type' => $this->type
+            'type' => $this->type,
+            'priceAfterDiscount' => $this->getPriceAfterDiscount()
         ];
     }
 }
 ?>
+

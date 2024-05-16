@@ -8,7 +8,11 @@ require_once __DIR__ . '/Models/Bed.php';
 require_once __DIR__ . '/Models/Card.php';
 
 $dogFood = new DogProduct('dog_food.jpg', 'Cibo per Cani', 19.99, 'Cibo');
+$dogFood->setDiscount(10); 
+
 $catToy = new CatProduct('cat_toy.jpg', 'Gioco per Gatti', 9.99, 'Gioco');
+$catToy->setDiscount(15);
+
 $dogBed = new DogProduct('dog_bed.jpg', 'Cuccia per Cani', 49.99, 'Cuccia');
 
 $products = [
