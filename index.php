@@ -6,6 +6,7 @@ require_once __DIR__ . '/Models/Food.php';
 require_once __DIR__ . '/Models/Toy.php';
 require_once __DIR__ . '/Models/Bed.php';
 require_once __DIR__ . '/Models/Card.php';
+require_once __DIR__ . '/Models/Discountable.php';
 
 $dogFood = new DogProduct('dog_food.jpg', 'Cibo per Cani', 19.99, 'Cibo');
 $dogFood->setDiscount(10); 

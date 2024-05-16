@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . '/Models/Discountable.php';
+require_once __DIR__ . '/Discountable.php';
 
 class Product {
     use Discountable;

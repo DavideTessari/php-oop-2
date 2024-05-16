@@ -1,4 +1,7 @@
 <?php
+
+require_once __DIR__ . '/Product.php';
+
 class Card {
     public static function printCard($product) {
         $details = $product->getDetails();
